@@ -1,8 +1,11 @@
 import { Directive, Input, OnInit, OnDestroy, Output, EventEmitter, Renderer2, HostListener, PLATFORM_ID, Inject } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
-let fullpage: any = null;
 declare var require;
+let fullpage = null;
+if (!fullpage && window) {
+  fullpage = require('fullpage.js/dist/fullpage.extensions.min');
+}
 
 @Directive({
   // tslint:disable-next-line:directive-selector
@@ -18,11 +21,6 @@ export class FullpageDirective implements OnInit, OnDestroy {
     @Inject(PLATFORM_ID) private platformId: Object,
     private renderer: Renderer2
   ) {
-    if (!fullpage) {
-        if (isPlatformBrowser(platformId)) {
-          fullpage = require('fullpage.js/dist/fullpage.extensions.min');
-        }
-    }
   }
 
   ngOnInit() {
