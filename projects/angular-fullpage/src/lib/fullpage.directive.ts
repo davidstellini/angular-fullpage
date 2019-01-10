@@ -3,7 +3,7 @@ import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 declare var require;
 let fullpage = null;
-if (!fullpage && window) {
+if (!fullpage && typeof window !== 'undefined') {
   fullpage = require('fullpage.js/dist/fullpage.extensions.min');
 }
 
