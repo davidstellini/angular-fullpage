@@ -50,7 +50,7 @@ If you are creating an open source application under a license compatible with t
 
 ```typescript
 // app.module.ts
-import { AngularFullpageModule } from '@fullpage/angular-fullpage';
+import { AngularFullpageModule } from 'angular-fullpage';
 
 @NgModule({
   imports: [
@@ -110,13 +110,13 @@ Example of HTML:
 <!-- app.component.html -->
 <div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
   <div class="section">Some section1</div>
-	<div class="section" (click)="fullpage_api.moveSectionDown()">Some section2</div>
-	<div class="section">
-		<div class="slide">Slide 2.1</div>
-		<div class="slide">Slide 2.2</div>
-		<div class="slide">Slide 2.3</div>
-	</div>
-	<div class="section" (click)="fullpage_api.moveTo('secondPage', 2)">Some section4</div>
+    <div class="section" (click)="fullpage_api.moveSectionDown()">Some section2</div>
+    <div class="section">
+        <div class="slide">Slide 2.1</div>
+        <div class="slide">Slide 2.2</div>
+        <div class="slide">Slide 2.3</div>
+    </div>
+    <div class="section" (click)="fullpage_api.moveTo('secondPage', 2)">Some section4</div>
 </div>
 ```
 
